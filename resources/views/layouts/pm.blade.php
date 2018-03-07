@@ -10,18 +10,20 @@
 
     <link rel="stylesheet" href="{{ admin_asset("/vendor/pm/jquery-weui/css/jquery-weui.min.css") }}">
 
+    <link rel="stylesheet" href="{{ admin_asset("/vendor/pm/jquery-weui/demos/css/demos.css") }}">
+
+<style type="text/css">
+
+</style>
 </head>
   <body ontouchstart>
-
-
 
 
     <div class="weui-tab">
       <div class="weui-tab__bd">
         <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
-          <h1>页面一aa
-          </h1>
-
+          <h1>页面一</h1>
+          @yield('content')
         </div>
         <div id="tab2" class="weui-tab__bd-item">
           <h1>页面二</h1>
@@ -35,28 +37,28 @@
       </div>
 
       <div class="weui-tabbar">
-        <a href="/pm/task" class="weui-tabbar__item weui-bar__item--on">
+        <a href="#tab1" class="weui-tabbar__item weui-bar__item--on">
           <span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span>
           <div class="weui-tabbar__icon">
             <img src="/vendor/pm/jquery-weui/demos/images/icon_nav_button.png" alt="">
           </div>
-          <p class="weui-tabbar__label">代办</p>
+          <p class="weui-tabbar__label">微信</p>
         </a>
-        <a href="/pm/meeting" class="weui-tabbar__item">
+        <a href="#tab2" class="weui-tabbar__item">
           <div class="weui-tabbar__icon">
-            <img src="/vendor/pm/jquery-weui/demos//images/icon_nav_msg.png" alt="">
+            <img src="/vendor/pm/jquery-weui/demos/images/icon_nav_msg.png" alt="">
           </div>
-          <p class="weui-tabbar__label">会议</p>
+          <p class="weui-tabbar__label">通讯录</p>
         </a>
-        <a href="/pm/schedule" class="weui-tabbar__item">
+        <a href="#tab3" class="weui-tabbar__item">
           <div class="weui-tabbar__icon">
-            <img src="/vendor/pm/jquery-weui/demos//images/icon_nav_article.png" alt="">
+            <img src="/vendor/pm/jquery-weui/demos/images/icon_nav_article.png" alt="">
           </div>
-          <p class="weui-tabbar__label">行程</p>
+          <p class="weui-tabbar__label">发现</p>
         </a>
-        <a href="/pm/user" class="weui-tabbar__item">
+        <a href="#tab4" class="weui-tabbar__item">
           <div class="weui-tabbar__icon">
-            <img src="/vendor/pm/jquery-weui/demos//images/icon_nav_cell.png" alt="">
+            <img src="/vendor/pm/jquery-weui/demos/images/icon_nav_cell.png" alt="">
           </div>
           <p class="weui-tabbar__label">我</p>
         </a>
