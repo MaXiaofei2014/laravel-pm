@@ -3,7 +3,7 @@ namespace Lifeibest\LaravelPm\Http\Controllers;
 
 use Illuminate\Routing\Controller as BaseController;
 
-class TaskController extends BaseController
+class MeetingController extends BaseController
 {
     /**
      * Create a new controller instance.
@@ -18,7 +18,7 @@ class TaskController extends BaseController
      */
     public function index()
     {
-        return view('pm::task/index');
+        return view('pm::app');
     }
 
 }

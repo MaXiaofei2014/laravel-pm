@@ -91,6 +91,11 @@ class PmServiceProvider extends ServiceProvider
      */
     public function definePublishing()
     {
+
+        $this->publishes([
+            __DIR__ . '/../public' => public_path('vendor/pm'),
+        ], 'pm-assets');
+
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../config/pm.php' => config_path('pm.php'),
