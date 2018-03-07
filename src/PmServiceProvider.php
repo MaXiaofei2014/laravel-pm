@@ -57,7 +57,7 @@ class PmServiceProvider extends ServiceProvider
         Route::group([
             'prefix' => 'admin',
             'namespace' => 'Lifeibest\LaravelPm\Admin\Http\Controllers',
-            'middleware' => config('git-deploy.admin_middleware', ['web', 'admin']),
+            'middleware' => config('pm.admin_middleware', ['web', 'admin']),
         ], function () {
             Route::get('/task', 'TaskController@index');
         });
