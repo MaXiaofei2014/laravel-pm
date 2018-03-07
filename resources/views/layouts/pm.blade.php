@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="{{ admin_asset("/vendor/pm/jquery-weui/css/jquery-weui.min.css") }}">
 
-
+</head>
   <body ontouchstart>
 
 
@@ -20,7 +20,6 @@
       <div class="weui-tab__bd">
         <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
           <h1>页面一aa
-          	        @yield('content')
           </h1>
 
         </div>
