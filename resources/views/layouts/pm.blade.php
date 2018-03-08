@@ -18,16 +18,17 @@
 </head>
   <body ontouchstart>
 
-    <header class='demos-header'>
-      <h1 class="demos-title">Project Management</h1>
-    </header>
 
-    @yield('content')
+
 
     <div class="weui-tab">
       <div class="weui-tab__bd">
         <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
+    <header class='demos-header'>
+      <h1 class="demos-title">PM</h1>
 
+    </header>
+          @yield('content')
         </div>
         <div id="tab2" class="weui-tab__bd-item">
         </div>

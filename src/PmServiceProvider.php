@@ -59,13 +59,8 @@ class PmServiceProvider extends ServiceProvider
             'namespace' => 'Lifeibest\LaravelPm\Admin\Http\Controllers',
             'middleware' => config('pm.admin_middleware', ['web', 'admin']),
         ], function () {
-            Route::get('/task', 'TaskController@index');
+            $this->loadRoutesFrom(__DIR__ . '/../routes/admin.php');
         });
-
-        // parent::routes(function ($router) {
-        //     /* @var \Illuminate\Routing\Router $router */
-        //     $router->get('git-task', 'Lifeibest\LaravelPm\Admin\Http\Controllers\GitTaskController@index')->name('git-task');
-        // });
 
         Route::group([
             'prefix' => config('pm.base_path', 'pm'),
@@ -121,15 +116,15 @@ class PmServiceProvider extends ServiceProvider
             [
                 'title' => 'Task',
                 'icon' => 'fa-tasks',
-                'uri' => 'task',
+                'uri' => 'pm-task',
             ],
             [
                 'title' => 'Meeting',
                 'icon' => 'fa-terminal',
-                'uri' => 'meeting',
+                'uri' => 'pm-meeting',
             ],
             [
-                'title' => 'Pm config',
+                'title' => 'Schedule',
                 'icon' => 'fa-wrench',
                 'uri' => 'pm-config',
             ],
