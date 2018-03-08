@@ -25,11 +25,14 @@ class PmtaskModel extends Model
         'D' => 'D',
     ];
 
-    /**
-     * 获得与用户关联的电话记录。
-     */
-    public function systemconfigType()
+    // https://laravel-china.org/docs/laravel/5.5/eloquent-mutators
+    // 修改器 字段 desc
+    public function setDescAttribute($value = '')
     {
-        return $this->hasOne(SystemconfigType::class, 'id', 'systemconfig_type_id');
+        if (!$value) {
+            $value = '';
+        }
+        $this->attributes['desc'] = $value;
     }
+
 }

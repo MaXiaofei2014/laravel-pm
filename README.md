@@ -26,5 +26,5 @@ php artisan migrate --path=vendor/lifeibest/laravel-pm/database/migrations
 import menu and permission
 
 ```shell
-php artisan admin:import deploy
+php artisan admin:import pm
 ```
