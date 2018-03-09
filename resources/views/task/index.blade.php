@@ -27,7 +27,7 @@ Tasks
             </div>
 
             <div class="weui-cell__bd">
-              <p>Start - End</p>
+              <p>End</p>
             </div>         
             <div class="weui-cell__ft">
               
@@ -52,7 +52,7 @@ Tasks
 
             <div class="weui-cell__bd">
 
-              <p>{{ date('m-d',strtotime($task->start_at)) }} - 
+              <p>
                 {{ date('m-d',strtotime($task->end_at)) }}</p>
             </div>
             <div class="weui-cell__ft"></div>
