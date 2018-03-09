@@ -40,19 +40,19 @@
       </div>
 
       <div class="weui-tabbar">
-        <a href="#tab1" class="weui-tabbar__item weui-bar__item--on">
+        <a href="/pm/task#tab1" class="weui-tabbar__item weui-bar__item--on">
           <div class="weui-tabbar__icon">
             <img src="/vendor/pm/jquery-weui/demos/images/icon_nav_msg.png" alt="">
           </div>
           <p class="weui-tabbar__label">Tasks</p>
         </a>
-        <a href="#tab2" class="weui-tabbar__item">
+        <a href="/pm/meeting#tab2" class="weui-tabbar__item">
           <div class="weui-tabbar__icon">
             <img src="/vendor/pm/jquery-weui/demos/images/icon_nav_button.png" alt="">
           </div>
           <p class="weui-tabbar__label">Meetings</p>
         </a>
-        <a href="#tab3" class="weui-tabbar__item">
+        <a href="/pm/schedule#tab3" class="weui-tabbar__item">
           <div class="weui-tabbar__icon">
             <img src="/vendor/pm/jquery-weui/demos/images/icon_nav_article.png" alt="">
           </div>

@@ -8,3 +8,11 @@ Route::get('/meeting', 'MeetingController@index');
 Route::resources([
     'task' => TaskController::class,
 ]);
+
+Route::resources([
+    'meeting' => MeetingController::class,
+]);
+
+Route::resources([
+    'schedule' => ScheduleController::class,
+]);
