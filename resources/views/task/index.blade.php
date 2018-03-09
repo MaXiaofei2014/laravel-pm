@@ -26,11 +26,9 @@ Tasks
               <p>Status</p>
             </div>
 
-            <div class="weui-cell__bd">
-              <p>End</p>
-            </div>         
+         
             <div class="weui-cell__ft">
-              
+              End at
             </div>
           </div>
 
@@ -50,12 +48,7 @@ Tasks
               <span class="task_status task_status_{{$task->task_status}}">{{ PmTaskModel::$task_status_list[$task->task_status] }}</span>
             </div>
 
-            <div class="weui-cell__bd">
-
-              <p>
-                {{ date('m-d',strtotime($task->end_at)) }}</p>
-            </div>
-            <div class="weui-cell__ft"></div>
+            <div class="weui-cell__ft">{{ date('m-d',strtotime($task->end_at)) }}</div>
           </a>
 @endforeach
           
