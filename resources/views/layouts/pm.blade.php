@@ -41,7 +41,6 @@
 
       <div class="weui-tabbar">
         <a href="#tab1" class="weui-tabbar__item weui-bar__item--on">
-          <span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span>
           <div class="weui-tabbar__icon">
             <img src="/vendor/pm/jquery-weui/demos/images/icon_nav_msg.png" alt="">
           </div>

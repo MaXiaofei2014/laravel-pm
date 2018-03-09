@@ -8,9 +8,13 @@ Tasks
 @section('content')
 
 
-        <div class="weui-cells__title color_blue"><i class="weui-icon-success">Tasks</i></div>
+        <div class="weui-cells__title color_blue"><i class="weui-icon-success">Tasks
+          <span style="font-size: 15px">( {{count($task_list)}} )</span>
+        </i>
+
+        </div>
         <div class="weui-cells">
-          <a class="weui-cell weui-cell_access" href="">
+          <div class="weui-cell weui-cell_access" href="">
             <div class="weui-cell__hd">
               <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
             </div>
@@ -25,8 +29,10 @@ Tasks
             <div class="weui-cell__bd">
               <p>Start - End</p>
             </div>         
-            <div class="weui-cell__ft"></div>
-          </a>
+            <div class="weui-cell__ft">
+              
+            </div>
+          </div>
 
 @foreach ($task_list as $task)
           <a class="weui-cell weui-cell_access" href="/pm/task/{{ $task->id }}">
@@ -36,7 +42,7 @@ Tasks
               </div>
             </div>
             <div class="weui-cell__bd">
-              <p>{{ $task->task_name }}
+              <p>-{{ $task->id }}-{{ $task->task_name }}
               </p>
             </div>
 
@@ -46,9 +52,10 @@ Tasks
 
             <div class="weui-cell__bd">
 
-              <p>{{ $task->start_at }} - {{ $task->end_at }}</p>
+              <p>{{ date('m-d',strtotime($task->start_at)) }} - 
+                {{ date('m-d',strtotime($task->end_at)) }}</p>
             </div>
-            <div class="weui-cell__ft">{{ PmTaskModel::$priority_list[$task->priority]  }}</div>
+            <div class="weui-cell__ft"></div>
           </a>
 @endforeach
           
