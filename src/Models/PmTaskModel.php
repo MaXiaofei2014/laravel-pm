@@ -13,8 +13,9 @@ class PmTaskModel extends Model
         1 => 'Not start',
         2 => 'Processing',
         3 => 'Finish',
-        4 => 'Delay',
-        5 => 'Hang up',
+        4 => 'Hang up',
+        5 => 'Cancel',
+        6 => 'Delay',
     ];
 
     public static $priority_list = [
