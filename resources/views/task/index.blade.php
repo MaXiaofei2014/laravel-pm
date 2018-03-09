@@ -1,25 +1,44 @@
+<?php
+use Lifeibest\LaravelPm\Models\PmTaskModel;
+?>
 @extends('pm::layouts.pm')
 @section('title')
 Tasks
 @endsection
 @section('content')
-        <div class="weui-cells__title">Tasks</div>
-        <div class="weui-cells">
 
-          <a class="weui-cell weui-cell_access" href="javascript:;">
-            <div class="weui-cell__hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:20px;margin-right:5px;display:block"></div>
-            <div class="weui-cell__bd">
-              <p>cell standard</p>
+
+        <div class="weui-cells__title color_blue">Tasks</div>
+        <div class="weui-cells">
+@foreach ($task_list as $task)
+          <a class="weui-cell weui-cell_access" href="/pm/task/{{ $task->id }}">
+            <div class="weui-cell__hd">
+              <div class="priority {{$task->priority}}_label">
+                {{ PmTaskModel::$priority_list[$task->priority]  }}
+              </div>
             </div>
-            <div class="weui-cell__ft">说明文字</div>
-          </a>
-          <a class="weui-cell weui-cell_access" href="javascript:;">
-            <div class="weui-cell__hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:20px;margin-right:5px;display:block"></div>
             <div class="weui-cell__bd">
-              <p>cell standard</p>
+              <p>{{ $task->task_name }}
+                <span class="" style="float: right;margin-right: 10px;">
+                  
+                  <i class="weui-icon-info"></i>
+                  <i class="weui-icon-download"></i>
+                  <i class="weui-icon-success"></i>
+                  <i class="weui-icon-waiting"></i>
+                  <i class="weui-icon-warn"></i>
+                  {{ PmTaskModel::$task_status_list[$task->task_status]  }}
+                </span>
+              </p>
             </div>
-            <div class="weui-cell__ft">说明文字</div>
+
+            <div class="weui-cell__bd">
+
+              <p>{{ $task->start_at }} - {{ $task->end_at }}</p>
+            </div>
+            <div class="weui-cell__ft">{{ PmTaskModel::$priority_list[$task->priority]  }}</div>
           </a>
+@endforeach
+          
         </div>
       </div>
 @endsection

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ admin_asset("/vendor/pm/jquery-weui/css/jquery-weui.min.css") }}">
 
     <link rel="stylesheet" href="{{ admin_asset("/vendor/pm/jquery-weui/demos/css/demos.css") }}">
+    <link rel="stylesheet" href="{{ admin_asset("/vendor/pm/web/web.css") }}">
 
 <style type="text/css">
 

@@ -1,0 +1,54 @@
+.placeholder {
+  margin: 5px;
+  padding: 0 10px;
+  background-color: #ebebeb;
+  height: 2.3em;
+  line-height: 2.3em;
+  text-align: center;
+  color: #cfcfcf;
+}
+
+.show{
+	padding:0 10px;
+}
+.color_blue{
+	color: #3cc51f;
+}
+
+.priority{
+	padding: 0 5px;
+    border-radius: 50%;
+    font-size: 13px;
+    margin: 0 5px;
+}
+.S_label{
+color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.A_label{
+color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+
+.B_label{
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+.C_label{
+	color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.D_label{
+	color: #333;
+    background-color: #f9f2f4;
+    border-color: #e1e1e8;
+}
+
+

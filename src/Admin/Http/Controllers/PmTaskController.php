@@ -7,7 +7,7 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Illuminate\Routing\Controller;
-use Lifeibest\LaravelPm\Models\PmtaskModel;
+use Lifeibest\LaravelPm\Models\PmTaskModel;
 
 class PmTaskController extends Controller
 {
@@ -36,7 +36,7 @@ class PmTaskController extends Controller
      */
     protected function grid()
     {
-        return Admin::grid(PmtaskModel::class, function (Grid $grid) {
+        return Admin::grid(PmTaskModel::class, function (Grid $grid) {
 
             $grid->id('ID')->sortable();
 
@@ -48,7 +48,7 @@ class PmTaskController extends Controller
 
             $grid->task_name()->sortable();
             $grid->column('task_status')->display(function ($task_status) {
-                return PmtaskModel::$task_status_list[$task_status];
+                return PmTaskModel::$task_status_list[$task_status];
             });
 
             $grid->priority()->sortable();
@@ -77,11 +77,11 @@ class PmTaskController extends Controller
             $grid->filter(function ($filter) {
                 //$filter->disableIdFilter();
                 $filter->like('task_name');
-                $filter->equal('task_status')->radio(PmtaskModel::$task_status_list);
+                $filter->equal('task_status')->radio(PmTaskModel::$task_status_list);
             });
             $grid->filter(function ($filter) {
                 //$filter->disableIdFilter();
-                $filter->equal('priority')->radio(PmtaskModel::$priority_list);
+                $filter->equal('priority')->radio(PmTaskModel::$priority_list);
             });
         });
     }
@@ -163,14 +163,14 @@ class PmTaskController extends Controller
      */
     protected function form()
     {
-        return Admin::form(PmtaskModel::class, function (Form $form) {
+        return Admin::form(PmTaskModel::class, function (Form $form) {
 
             $form->display('id', 'ID');
 
             $form->text('task_name')->rules('required');
             $form->textarea('desc');
-            $form->radio('task_status')->options(PmtaskModel::$task_status_list)->default(1);
-            $form->radio('priority')->options(PmtaskModel::$priority_list)->default('D');
+            $form->radio('task_status')->options(PmTaskModel::$task_status_list)->default(1);
+            $form->radio('priority')->options(PmTaskModel::$priority_list)->default('D');
 
             $form->datetimeRange('start_at', 'end_at', 'Start at - End at');
 

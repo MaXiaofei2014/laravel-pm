@@ -4,7 +4,7 @@ namespace Lifeibest\LaravelPm\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PmtaskModel extends Model
+class PmTaskModel extends Model
 {
     protected $table = 'pm_task';
 
