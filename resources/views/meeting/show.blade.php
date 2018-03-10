@@ -32,10 +32,13 @@ Tasks
     </div>
     </div>
 
-    <div class="weui-flex">
-      <div style="color: #999;">
-      	{{ $meeting->desc }}
-      </div>
-    </div>
+    <article class="weui-article" style="padding-left: 0;padding-right: 0;">
+        <section>
+{!! nl2br($meeting->desc) !!}
+</section>
+
+    </article>
+
+
 </div>
 @endsection

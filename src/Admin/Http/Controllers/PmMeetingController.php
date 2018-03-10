@@ -164,6 +164,7 @@ class PmMeetingController extends Controller
             $form->display('id', 'ID');
 
             $form->text('meeting_theme')->rules('required');
+
             $form->textarea('desc');
             $form->radio('meeting_type')->options(PmMeetingModel::$meeting_type_list)->default(9);
 
