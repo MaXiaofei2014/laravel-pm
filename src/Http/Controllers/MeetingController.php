@@ -2,7 +2,7 @@
 namespace Lifeibest\LaravelPm\Http\Controllers;
 
 use Illuminate\Routing\Controller as BaseController;
-use Lifeibest\LaravelPm\Models\PmTaskModel;
+use Lifeibest\LaravelPm\Models\PmMeetingModel;
 
 class MeetingController extends BaseController
 {
@@ -19,18 +19,18 @@ class MeetingController extends BaseController
      */
     public function index()
     {
-        $pmTaskModel = new PmTaskModel();
-        $task_list = $pmTaskModel->all();
-        return view('pm::task/index', [
-            'task_list' => $task_list,
+        $pmMeetingModel = new PmMeetingModel();
+        $meeting_list = $pmMeetingModel->all();
+        return view('pm::meeting/index', [
+            'meeting_list' => $meeting_list,
         ]);
     }
 
     public function show($id)
     {
-        $task = PmTaskModel::find($id);
-        return view('pm::task/show', [
-            'task' => $task,
+        $meeting = PmMeetingModel::find($id);
+        return view('pm::meeting/show', [
+            'meeting' => $meeting,
         ]);
 
     }

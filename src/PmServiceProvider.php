@@ -126,7 +126,7 @@ class PmServiceProvider extends ServiceProvider
             [
                 'title' => 'Schedule',
                 'icon' => 'fa-wrench',
-                'uri' => 'pm-config',
+                'uri' => 'pm-schedule',
             ],
         ];
         foreach ($menus as $menu) {

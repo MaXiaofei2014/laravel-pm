@@ -8,7 +8,7 @@ Tasks
 @section('content')
 
 
-        <div class="weui-cells__title color_blue"><i class="weui-icon-success">Tasks
+        <div class="weui-cells__title color_blue" style="margin-bottom: 15px;"><i class="weui-icon-success">Tasks
           <span style="font-size: 15px">( {{count($task_list)}} )</span>
         </i>
 

@@ -8,22 +8,12 @@ class PmMeetingModel extends Model
 {
     protected $table = 'pm_meeting';
 
-    //1、Not start 2、Processing 3、Finish 4、Delay 5、Hang up
-    public static $task_status_list = [
-        1 => 'Not start',
-        2 => 'Processing',
-        3 => 'Finish',
-        4 => 'Hang up',
-        5 => 'Cancel',
-        6 => 'Delay',
-    ];
-
-    public static $priority_list = [
-        'S' => 'S',
-        'A' => 'A',
-        'B' => 'B',
-        'C' => 'C',
-        'D' => 'D',
+    //1、Business 2、Manage 3、Private 9、Other
+    public static $meeting_type_list = [
+        1 => 'Business',
+        2 => 'Manage',
+        3 => 'Private',
+        9 => 'Other',
     ];
 
     // https://laravel-china.org/docs/laravel/5.5/eloquent-mutators

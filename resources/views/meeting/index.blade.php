@@ -1,5 +1,5 @@
 <?php
-use Lifeibest\LaravelPm\Models\PmTaskModel;
+use Lifeibest\LaravelPm\Models\PmMeetingModel;
 ?>
 @extends('pm::layouts.pm')
 @section('title')
@@ -8,47 +8,41 @@ Tasks
 @section('content')
 
 
-        <div class="weui-cells__title color_blue"><i class="weui-icon-success">Tasks
-          <span style="font-size: 15px">( {{count($task_list)}} )</span>
+        <div class="weui-cells__title color_blue" style="margin-bottom: 15px;"><i class="weui-icon-success">MeetingS
+          <span style="font-size: 15px">( {{count($meeting_list)}} )</span>
         </i>
 
         </div>
         <div class="weui-cells">
           <div class="weui-cell weui-cell_access" href="">
-            <div class="weui-cell__hd">
-              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            </div>
             <div class="weui-cell__bd">
-              <p>Task name</p>
+              <p>Meeting theme</p>
             </div>
 
+
             <div class="weui-cell__bd">
-              <p>Status</p>
+              <p>Type</p>
             </div>
 
          
             <div class="weui-cell__ft">
-              End at
+              Start at
             </div>
           </div>
 
-@foreach ($task_list as $task)
-          <a class="weui-cell weui-cell_access" href="/pm/task/{{ $task->id }}">
-            <div class="weui-cell__hd">
-              <div class="priority {{$task->priority}}_label">
-                {{ PmTaskModel::$priority_list[$task->priority]  }}
-              </div>
-            </div>
+@foreach ($meeting_list as $meeting)
+          <a class="weui-cell weui-cell_access" href="/pm/meeting/{{ $meeting->id }}">
             <div class="weui-cell__bd">
-              <p>-{{ $task->id }}-{{ $task->task_name }}
+              <p>{{ $meeting->id }}-{{ $meeting->meeting_theme }}
               </p>
             </div>
+   
 
             <div class="weui-cell__bd">
-              <span class="task_status task_status_{{$task->task_status}}">{{ PmTaskModel::$task_status_list[$task->task_status] }}</span>
+              <span class="meeting_type">{{ PmMeetingModel::$meeting_type_list[$meeting->meeting_type] }}</span>
             </div>
 
-            <div class="weui-cell__ft">{{ date('m-d',strtotime($task->end_at)) }}</div>
+            <div class="weui-cell__ft">{{ date('m-d H:i',strtotime($meeting->start_at)) }}</div>
           </a>
 @endforeach
           
