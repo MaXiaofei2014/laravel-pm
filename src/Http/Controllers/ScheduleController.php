@@ -19,18 +19,18 @@ class ScheduleController extends BaseController
      */
     public function index()
     {
-        $pmMeetingModel = new PmScheduleModel();
-        $meeting_list = $pmMeetingModel->all();
-        return view('pm::meeting/index', [
-            'meeting_list' => $meeting_list,
+        $pmScheduleModel = new PmScheduleModel();
+        $schedule_list = $pmScheduleModel->all();
+        return view('pm::schedule/index', [
+            'schedule_list' => $schedule_list,
         ]);
     }
 
     public function show($id)
     {
-        $meeting = PmScheduleModel::find($id);
-        return view('pm::meeting/show', [
-            'meeting' => $meeting,
+        $schedule = PmScheduleModel::find($id);
+        return view('pm::schedule/show', [
+            'schedule' => $schedule,
         ]);
 
     }

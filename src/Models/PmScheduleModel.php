@@ -21,6 +21,7 @@ class PmScheduleModel extends Model
         2 => '面试',
         3 => '会客',
         4 => '生活',
+        5 => '运动',
     ];
 
     // https://laravel-china.org/docs/laravel/5.5/eloquent-mutators
