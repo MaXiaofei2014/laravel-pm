@@ -10,12 +10,12 @@ class PmTaskModel extends Model
 
     //1、Not start 2、Processing 3、Finish 4、Delay 5、Hang up
     public static $task_status_list = [
-        1 => 'Not start',
-        2 => 'Processing',
-        3 => 'Finish',
-        4 => 'Hang up',
-        5 => 'Cancel',
-        6 => 'Delay',
+        1 => '未开始',
+        2 => '进行中',
+        3 => '完成',
+        4 => '挂起',
+        5 => '取消',
+        6 => '延期',
     ];
 
     public static $priority_list = [

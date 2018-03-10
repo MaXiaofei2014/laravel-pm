@@ -131,7 +131,7 @@ class PmMeetingController extends Controller
         return Admin::content(function (Content $content) {
             // 面包屑导航
             $content->breadcrumb(
-                ['text' => 'Meetings', 'url' => '/pm-meeting'],
+                ['text' => '会议', 'url' => '/pm-meeting'],
                 ['text' => 'create']
             );
 

@@ -17,13 +17,13 @@ class PmTaskController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('Tasks');
-            $content->description('list');
+            $content->header('任务');
+            $content->description('列表');
 
             // 面包屑导航
             $content->breadcrumb(
-                ['text' => 'tasks', 'url' => '/pm-task'],
-                ['text' => 'detail']
+                ['text' => '任务', 'url' => '/pm-task'],
+                ['text' => '详情']
             );
             $content->body($this->grid());
         });
@@ -46,14 +46,14 @@ class PmTaskController extends Controller
             //     return systemconfigType::find($systemconfig_type_id)->name;
             // });
 
-            $grid->task_name()->sortable();
-            $grid->column('task_status')->display(function ($task_status) {
+            $grid->task_name('任务')->sortable();
+            $grid->column('task_status', '状态')->display(function ($task_status) {
                 return PmTaskModel::$task_status_list[$task_status];
             });
 
-            $grid->priority()->sortable();
-            $grid->start_at()->sortable();
-            $grid->end_at()->sortable();
+            $grid->priority('优先级')->sortable();
+            $grid->start_at('开始')->sortable();
+            $grid->end_at('结束')->sortable();
 
             // $grid->created_at()->sortable();
             // $grid->updated_at()->sortable();
@@ -97,11 +97,11 @@ class PmTaskController extends Controller
         return Admin::content(function (Content $content) use ($id) {
             // 面包屑导航
             $content->breadcrumb(
-                ['text' => 'tasks', 'url' => '/pm-task'],
-                ['text' => 'edit']
+                ['text' => '任务', 'url' => '/pm-task'],
+                ['text' => '编辑']
             );
-            $content->header('task');
-            $content->description('edit');
+            $content->header('任务');
+            $content->description('编辑');
 
             $content->body($this->form()->edit($id));
         });
@@ -135,12 +135,12 @@ class PmTaskController extends Controller
         return Admin::content(function (Content $content) {
             // 面包屑导航
             $content->breadcrumb(
-                ['text' => 'task', 'url' => '/pm-task'],
-                ['text' => 'create']
+                ['text' => '任务', 'url' => '/pm-task'],
+                ['text' => '创建']
             );
 
-            $content->header('task');
-            $content->description('create');
+            $content->header('任务');
+            $content->description('创建');
 
             $content->body($this->form());
         });
@@ -167,12 +167,12 @@ class PmTaskController extends Controller
 
             $form->display('id', 'ID');
 
-            $form->text('task_name')->rules('required');
-            $form->textarea('desc');
-            $form->radio('task_status')->options(PmTaskModel::$task_status_list)->default(1);
-            $form->radio('priority')->options(PmTaskModel::$priority_list)->default('D');
+            $form->text('task_name', '任务')->rules('required');
+            $form->textarea('desc', '描述');
+            $form->radio('task_status', '状态')->options(PmTaskModel::$task_status_list)->default(1);
+            $form->radio('priority', '优先级')->options(PmTaskModel::$priority_list)->default('D');
 
-            $form->datetimeRange('start_at', 'end_at', 'Start at - End at');
+            $form->datetimeRange('start_at', 'end_at', '开始 - 结束');
 
             //$form->display('finish_at');
             $form->display('created_at');

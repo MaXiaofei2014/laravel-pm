@@ -10,10 +10,10 @@ class PmMeetingModel extends Model
 
     //1、Business 2、Manage 3、Private 9、Other
     public static $meeting_type_list = [
-        1 => 'Business',
-        2 => 'Manage',
-        3 => 'Private',
-        9 => 'Other',
+        1 => '业务',
+        2 => '管理',
+        3 => '私人',
+        9 => '其它',
     ];
 
     // https://laravel-china.org/docs/laravel/5.5/eloquent-mutators

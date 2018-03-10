@@ -8,7 +8,7 @@ Tasks
 @section('content')
 
 
-        <div class="weui-cells__title color_blue" style="margin-bottom: 15px;"><i class="weui-icon-success">Tasks
+        <div class="weui-cells__title color_blue" style="margin-bottom: 15px;"><i class="weui-icon-success">任务
           <span style="font-size: 15px">( {{count($task_list)}} )</span>
         </i>
 
@@ -19,16 +19,16 @@ Tasks
               <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
             </div>
             <div class="weui-cell__bd">
-              <p>Task name</p>
+              <p>名称</p>
             </div>
 
             <div class="weui-cell__bd">
-              <p>Status</p>
+              <p>状态</p>
             </div>
 
          
             <div class="weui-cell__ft">
-              End at
+              截止
             </div>
           </div>
 

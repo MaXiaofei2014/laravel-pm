@@ -15,10 +15,10 @@ Tasks
     <div class="weui-flex">
       <div class="weui-flex__item">
         <div class="">
-          Status: <span class="task_status task_status_{{$task->task_status}}">{{ PmTaskModel::$task_status_list[$task->task_status] }}</span>
+          状态: <span class="task_status task_status_{{$task->task_status}}">{{ PmTaskModel::$task_status_list[$task->task_status] }}</span>
         </div>
       </div>
-      <div class="weui-flex__item"><div class="">Start - End: {{ date('m-d',strtotime($task->start_at)) }} - 
+      <div class="weui-flex__item"><div class="">开始 - 截止: {{ date('m-d',strtotime($task->start_at)) }} - 
                 {{ date('m-d',strtotime($task->end_at)) }}</div></div>
     </div>
     <div class="weui-flex">

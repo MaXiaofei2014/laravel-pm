@@ -26,7 +26,7 @@
       <div class="weui-tab__bd">
         <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
     <header class='demos-header'>
-      <h1 class="demos-title">PM</h1>
+      <h1 class="demos-title">项目管理</h1>
 
     </header>
           @yield('content')
@@ -40,29 +40,29 @@
       </div>
 
       <div class="weui-tabbar">
-        <a href="/pm/task#tab1" class="weui-tabbar__item weui-bar__item--on">
+        <a href="/pm/task#tab1" class="weui-tabbar__item">
           <div class="weui-tabbar__icon">
             <img src="/vendor/pm/jquery-weui/demos/images/icon_nav_msg.png" alt="">
           </div>
-          <p class="weui-tabbar__label">Tasks</p>
+          <p class="weui-tabbar__label">任务</p>
         </a>
         <a href="/pm/meeting#tab2" class="weui-tabbar__item">
           <div class="weui-tabbar__icon">
             <img src="/vendor/pm/jquery-weui/demos/images/icon_nav_button.png" alt="">
           </div>
-          <p class="weui-tabbar__label">Meetings</p>
+          <p class="weui-tabbar__label">会议</p>
         </a>
         <a href="/pm/schedule#tab3" class="weui-tabbar__item">
           <div class="weui-tabbar__icon">
             <img src="/vendor/pm/jquery-weui/demos/images/icon_nav_article.png" alt="">
           </div>
-          <p class="weui-tabbar__label">Schedules</p>
+          <p class="weui-tabbar__label">行程</p>
         </a>
-        <a href="#tab4" class="weui-tabbar__item">
+        <a href="#tab4" class="weui-tabbar__item weui-bar__item--on">
           <div class="weui-tabbar__icon">
             <img src="/vendor/pm/jquery-weui/demos/images/icon_nav_cell.png" alt="">
           </div>
-          <p class="weui-tabbar__label">User</p>
+          <p class="weui-tabbar__label">我</p>
         </a>
       </div>
     </div>
