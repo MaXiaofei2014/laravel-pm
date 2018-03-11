@@ -19,11 +19,6 @@ Tasks
               <p>主题</p>
             </div>
 
-
-            <div class="weui-cell__bd">
-              <p>类型</p>
-            </div>
-
          
             <div class="weui-cell__ft">
               开始
@@ -33,14 +28,11 @@ Tasks
 @foreach ($meeting_list as $meeting)
           <a class="weui-cell weui-cell_access" href="/pm/meeting/{{ $meeting->id }}">
             <div class="weui-cell__bd">
-              <p>{{ $meeting->id }}-{{ $meeting->meeting_theme }}
+              <p>              <span class="meeting_type">{{ PmMeetingModel::$meeting_type_list[$meeting->meeting_type] }}</span>
+ {{ $meeting->id }}-{{ $meeting->meeting_theme }} 
               </p>
             </div>
-   
-
-            <div class="weui-cell__bd">
-              <span class="meeting_type">{{ PmMeetingModel::$meeting_type_list[$meeting->meeting_type] }}</span>
-            </div>
+  
 
             <div class="weui-cell__ft">{{ date('m-d H:i',strtotime($meeting->start_at)) }}</div>
           </a>

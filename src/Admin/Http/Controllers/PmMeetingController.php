@@ -163,10 +163,11 @@ class PmMeetingController extends Controller
 
             $form->display('id', 'ID');
 
-            $form->text('meeting_theme')->rules('required');
+            $form->text('meeting_theme', '会议主题')->rules('required');
+            $form->textarea('participants', '参会人员')->rules('required');
 
-            $form->textarea('desc');
-            $form->radio('meeting_type')->options(PmMeetingModel::$meeting_type_list)->default(9);
+            $form->textarea('desc', '会议内容');
+            $form->radio('meeting_type', '类别')->options(PmMeetingModel::$meeting_type_list)->default(9);
 
             $form->datetimeRange('start_at', 'end_at', 'Start at - End at');
 

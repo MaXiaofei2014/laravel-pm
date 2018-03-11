@@ -23,6 +23,15 @@ use Lifeibest\LaravelPm\Models\PmMeetingModel;
     </div>
     </div>
 
+
+    <div class="weui-flex">
+    <div class="weui-flex__item">
+      <div class="">
+          参会人员: {{ $meeting->participants }}
+        </div>
+    </div>
+    </div>
+
     <div class="weui-flex">
     <div class="weui-flex__item">
       <div class="">

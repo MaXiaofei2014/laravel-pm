@@ -114,17 +114,17 @@ class PmServiceProvider extends ServiceProvider
         $root = Menu::create($root);
         $menus = [
             [
-                'title' => 'Task',
+                'title' => '任务',
                 'icon' => 'fa-tasks',
                 'uri' => 'pm-task',
             ],
             [
-                'title' => 'Meeting',
+                'title' => '会议',
                 'icon' => 'fa-terminal',
                 'uri' => 'pm-meeting',
             ],
             [
-                'title' => 'Schedule',
+                'title' => '行程',
                 'icon' => 'fa-wrench',
                 'uri' => 'pm-schedule',
             ],
