@@ -29,6 +29,7 @@
       <h1 class="demos-title">项目管理</h1>
 
     </header>
+        <div style="margin-bottom: 100px;">
           @yield('content')
         </div>
         <div id="tab2" class="weui-tab__bd-item">
