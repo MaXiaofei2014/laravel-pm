@@ -10,7 +10,7 @@ use Lifeibest\LaravelPm\Models\PmCalendarModel;
 	  <div class="weui-flex">
     <div class="weui-flex__item">
       <div class="color_blue">
-      	{{ $calendar->id }}-{{ $calendar->pmSchedule->schedule }}
+      	{{ $calendar->pmSchedule->schedule }}
       </div>
     </div>
     </div>

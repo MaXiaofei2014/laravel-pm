@@ -38,7 +38,7 @@ Tasks
 @foreach ($calendar_list as $calendar)
           <a class="weui-cell weui-cell_access" href="/pm/calendar/{{ $calendar->id }}">
             <div class="weui-cell__bd">
-              <p>{{ $calendar->id }}-{{ $calendar->calendar_title }}
+              <p>{{ $calendar->calendar_title }}
               </p>
             </div>
 
