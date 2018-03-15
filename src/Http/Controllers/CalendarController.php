@@ -19,16 +19,27 @@ class CalendarController extends BaseController
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
         $pmCalendarModel = new PmCalendarModel();
+        $time_type = $request->input('time_type', '今天');
+        if ($time_type == '今天') {
+            $start_at_end = date('Y-m-d 00:00:00', time() + 24 * 3600);
+        }
+        if ($time_type == '周') {
+            $start_at_end = date('Y-m-d 00:00:00', time() + 7 * 24 * 3600);
+        }
+        if ($time_type == '月') {
+            $start_at_end = date('Y-m-d 00:00:00', time() + 30 * 24 * 3600);
+        }
         $calendar_list = $pmCalendarModel
             ->where('start_at', '>=', date('Y-m-d 00:00:00', time()))
-            ->where('start_at', '<', date('Y-m-d 00:00:00', time() + 24 * 3600))
+            ->where('start_at', '<', $start_at_end)
             ->orderBy('start_at', 'asc')
             ->get();
         return view('pm::calendar/index', [
             'calendar_list' => $calendar_list,
+            'time_type' => $time_type,
         ]);
     }
 
@@ -43,8 +54,8 @@ class CalendarController extends BaseController
 
     public function time(Request $request)
     {
-        $data = PmCalendarModel::all();
         $time_type = $request->input('time_type');
+        $pmCalendarModel = new PmCalendarModel();
         if ($time_type == '今天') {
             $data = $pmCalendarModel
                 ->where('start_at', '>=', date('Y-m-d 00:00:00', time()))

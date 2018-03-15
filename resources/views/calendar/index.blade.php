@@ -18,7 +18,7 @@ Tasks
       <div class="weui-cell">
         <div class="weui-cell__hd"><label for="name" class="weui-label">周期</label></div>
         <div class="weui-cell__bd">
-          <input class="weui-input" id="time_type" type="text" value="今天">
+          <input class="weui-input" id="time_type" type="text" value="{{ $time_type }}">
         </div>
       </div>
 

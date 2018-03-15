@@ -11,20 +11,22 @@ $("#time_type").select({
     console.log("close");
     var time_type = $('#time_type').val();
 
-$.ajax({
-url: "/pm/calendar/time",
+    window.location.href='/pm/calendar?time_type='+time_type;
 
-data:{time_type:time_type},
+// $.ajax({
+// url: "/pm/calendar/time",
 
-type: "get",
+// data:{time_type:time_type},
 
-dataType:'json',
+// type: "get",
 
-success:function(){
-  alert('1');
-}
+// dataType:'json',
 
-});
+// success:function(){
+
+// }
+
+// });
 
   },
   onOpen: function() {
