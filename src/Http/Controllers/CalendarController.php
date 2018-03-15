@@ -4,7 +4,6 @@ namespace Lifeibest\LaravelPm\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Lifeibest\LaravelPm\Http\Resources\PmScheduleCollection;
-use Lifeibest\LaravelPm\Http\Resources\PmScheduleResource;
 use Lifeibest\LaravelPm\Models\PmCalendarModel;
 
 class CalendarController extends BaseController
@@ -23,7 +22,11 @@ class CalendarController extends BaseController
     public function index()
     {
         $pmCalendarModel = new PmCalendarModel();
-        $calendar_list = $pmCalendarModel->all();
+        $calendar_list = $pmCalendarModel
+            ->where('start_at', '>=', date('Y-m-d 00:00:00', time()))
+            ->where('start_at', '<', date('Y-m-d 00:00:00', time() + 24 * 3600))
+            ->orderBy('start_at', 'asc')
+            ->get();
         return view('pm::calendar/index', [
             'calendar_list' => $calendar_list,
         ]);
@@ -41,15 +44,34 @@ class CalendarController extends BaseController
     public function time(Request $request)
     {
         $data = PmCalendarModel::all();
+        $time_type = $request->input('time_type');
+        if ($time_type == '今天') {
+            $data = $pmCalendarModel
+                ->where('start_at', '>=', date('Y-m-d 00:00:00', time()))
+                ->where('start_at', '<', date('Y-m-d 00:00:00', time() + 24 * 3600))
+                ->orderBy('start_at', 'asc')
+                ->get();
+        }
+        if ($time_type == '周') {
+            $data = $pmCalendarModel
+                ->where('start_at', '>=', date('Y-m-d 00:00:00', time()))
+                ->where('start_at', '<', date('Y-m-d 00:00:00', time() + 7 * 24 * 3600))
+                ->orderBy('start_at', 'asc')
+                ->get();
+        }
+        if ($time_type == '月') {
+            $data = $pmCalendarModel
+                ->where('start_at', '>=', date('Y-m-d 00:00:00', time()))
+                ->where('start_at', '<', date('Y-m-d H:i:s', strtotime(time() . " +1 month")))
+                ->orderBy('start_at', 'asc')
+                ->get();
+        }
 
         return new PmScheduleCollection($data);
 
-        return new PmScheduleResource(PmCalendarModel::find(1));
-
-        if (function_exists('Debugbar')) {
-            \Debugbar::disable();
-        }
-        echo $time_type = $request->input('time_type');
+        // if (function_exists('Debugbar')) {
+        //     \Debugbar::disable();
+        // }
 
     }
 }

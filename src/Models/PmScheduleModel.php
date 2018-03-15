@@ -54,4 +54,45 @@ class PmScheduleModel extends Model
         $this->attributes['desc'] = $value;
     }
 
+    public function repeatTime()
+    {
+        $time = [];
+        $repeat = $this->repeat;
+        $start_at = $this->start_at;
+        $end_at = $this->end_at;
+        $time[] = ['start_at' => $start_at, 'end_at' => $end_at];
+        //重复1天 2周 3月 4季度 5年 9不重复
+        if ($repeat == '1') {
+            # code...
+        } elseif ($repeat == '2') {
+            for ($i = 1; $i <= 52; $i++) {
+                $start_at = date('Y-m-d H:i:s', strtotime($start_at . " +1 week"));
+                $end_at = date('Y-m-d H:i:s', strtotime($end_at . " +1 week"));
+                $time[] = ['start_at' => $start_at, 'end_at' => $end_at];
+            }
+
+        } elseif ($repeat == '3') {
+            for ($i = 1; $i <= 12; $i++) {
+                $start_at = date('Y-m-d H:i:s', strtotime($start_at . " +1 month"));
+                $end_at = date('Y-m-d H:i:s', strtotime($end_at . " +1 month"));
+                $time[] = ['start_at' => $start_at, 'end_at' => $end_at];
+            }
+        } elseif ($repeat == '4') {
+            for ($i = 1; $i <= 4; $i++) {
+                $start_at = date('Y-m-d H:i:s', strtotime($start_at . " +3 month"));
+                $end_at = date('Y-m-d H:i:s', strtotime($end_at . " +3 month"));
+                $time[] = ['start_at' => $start_at, 'end_at' => $end_at];
+            }
+        } elseif ($repeat == '5') {
+            for ($i = 1; $i <= 1; $i++) {
+                $start_at = date('Y-m-d H:i:s', strtotime($start_at . " +1 year"));
+                $end_at = date('Y-m-d H:i:s', strtotime($end_at . " +1 year"));
+                $time[] = ['start_at' => $start_at, 'end_at' => $end_at];
+            }
+        } else {
+
+        }
+        return $time;
+    }
+
 }

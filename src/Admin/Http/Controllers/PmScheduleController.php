@@ -7,6 +7,7 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Illuminate\Routing\Controller;
+use Lifeibest\LaravelPm\Models\PmCalendarModel;
 use Lifeibest\LaravelPm\Models\PmScheduleModel;
 
 class PmScheduleController extends Controller
@@ -123,6 +124,11 @@ class PmScheduleController extends Controller
     {
 
         $result = $this->form()->update($id);
+
+        //更新日历
+        $pmCalendarModel = new PmCalendarModel();
+        $pmCalendarModel->createCalendarBySchedule($id);
+
         // 界面的跳转逻辑
         admin_toastr('success', 'success');
         return $result;

@@ -15,7 +15,7 @@ Route::resources([
     'schedule' => ScheduleController::class,
 ]);
 
-Route::get('/calendar/time', 'ScheduleController@time');
+Route::get('/calendar/time', 'CalendarController@time');
 
 Route::resources([
     'calendar' => CalendarController::class,

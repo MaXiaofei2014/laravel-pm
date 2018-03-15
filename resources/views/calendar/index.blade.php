@@ -18,7 +18,7 @@ Tasks
       <div class="weui-cell">
         <div class="weui-cell__hd"><label for="name" class="weui-label">周期</label></div>
         <div class="weui-cell__bd">
-          <input class="weui-input" id="time_type" type="text" value="">
+          <input class="weui-input" id="time_type" type="text" value="今天">
         </div>
       </div>
 
@@ -26,9 +26,6 @@ Tasks
             <div class="weui-cell__bd">
               <p>行程</p>
             </div>
-
-
-
 
          
             <div class="weui-cell__ft">
@@ -41,11 +38,9 @@ Tasks
 @foreach ($calendar_list as $calendar)
           <a class="weui-cell weui-cell_access" href="/pm/calendar/{{ $calendar->id }}">
             <div class="weui-cell__bd">
-              <p>{{ $calendar->id }}-{{ $calendar->pmSchedule->schedule }}
+              <p>{{ $calendar->id }}-{{ $calendar->calendar_title }}
               </p>
             </div>
-   
-
 
 
             <div class="weui-cell__ft">{{ date('m-d H:i',strtotime($calendar->start_at)) }}</div>
