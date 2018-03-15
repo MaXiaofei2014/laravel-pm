@@ -1,8 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
 
-Route::get('/meeting', 'MeetingController@index');
-
 //Route::get('/{view?}', 'TaskController@index')->where('view', '(.*)');
 
 Route::resources([
@@ -16,3 +14,13 @@ Route::resources([
 Route::resources([
     'schedule' => ScheduleController::class,
 ]);
+
+Route::get('/calendar/time', 'ScheduleController@time');
+
+Route::resources([
+    'calendar' => CalendarController::class,
+]);
+
+// Route::get('schedule-api', function () {
+//     return PmScheduleResource::collection(PmScheduleModel::paginate());
+// });

@@ -34,4 +34,5 @@ class ScheduleController extends BaseController
         ]);
 
     }
+
 }

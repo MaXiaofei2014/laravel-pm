@@ -9,12 +9,18 @@ Tasks
 
 
         <div class="weui-cells__title color_blue" style="margin-bottom: 15px;"><i class="weui-icon-success">行程
-          <span style="font-size: 15px">( {{count($schedule_list)}} )</span>
+          <span style="font-size: 15px">( {{count($calendar_list)}} )</span>
         </i>
 
         </div>
         <div class="weui-cells">
 
+      <div class="weui-cell">
+        <div class="weui-cell__hd"><label for="name" class="weui-label">周期</label></div>
+        <div class="weui-cell__bd">
+          <input class="weui-input" id="time_type" type="text" value="">
+        </div>
+      </div>
 
           <div class="weui-cell weui-cell_access" href="">
             <div class="weui-cell__bd">
@@ -22,9 +28,7 @@ Tasks
             </div>
 
 
-            <div class="weui-cell__bd">
-              <p>类型</p>
-            </div>
+
 
          
             <div class="weui-cell__ft">
@@ -34,19 +38,17 @@ Tasks
             </div>
           </div>
 
-@foreach ($schedule_list as $schedule)
-          <a class="weui-cell weui-cell_access" href="/pm/schedule/{{ $schedule->id }}">
+@foreach ($calendar_list as $calendar)
+          <a class="weui-cell weui-cell_access" href="/pm/calendar/{{ $calendar->id }}">
             <div class="weui-cell__bd">
-              <p>{{ $schedule->id }}-{{ $schedule->schedule }}
+              <p>{{ $calendar->id }}-{{ $calendar->pmSchedule->schedule }}
               </p>
             </div>
    
 
-            <div class="weui-cell__bd">
-              <span class="meeting_type">{{ PmScheduleModel::$schedule_type_list[$schedule->schedule_type] }}</span>
-            </div>
 
-            <div class="weui-cell__ft">{{ date('m-d H:i',strtotime($schedule->start_at)) }}</div>
+
+            <div class="weui-cell__ft">{{ date('m-d H:i',strtotime($calendar->start_at)) }}</div>
           </a>
 @endforeach
           

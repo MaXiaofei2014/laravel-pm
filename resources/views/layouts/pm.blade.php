@@ -53,7 +53,7 @@
           </div>
           <p class="weui-tabbar__label">会议</p>
         </a>
-        <a href="/pm/schedule#tab3" class="weui-tabbar__item">
+        <a href="/pm/calendar#tab3" class="weui-tabbar__item">
           <div class="weui-tabbar__icon">
             <img src="/vendor/pm/jquery-weui/demos/images/icon_nav_article.png" alt="">
           </div>
@@ -78,6 +78,7 @@
 <script src="{{ admin_asset ("/vendor/pm/jquery-weui/js/jquery-weui.min.js") }}"></script>
 <script src="{{ admin_asset ("/vendor/pm/jquery-weui/js/swiper.min.js") }}"></script>
 <script src="{{ admin_asset ("/vendor/pm/jquery-weui/js/city-picker.min.js") }}"></script>
+<script src="{{ admin_asset ("/vendor/pm/js/app.js") }}"></script>
 
   </body>
 </html>
