@@ -20,7 +20,10 @@ class TaskController extends BaseController
     public function index()
     {
         $pmTaskModel = new PmTaskModel();
-        $task_list = $pmTaskModel->all();
+        $task_list = $pmTaskModel
+            ->orderBy('task_status', 'asc')
+            ->orderBy('end_at', 'asc')
+            ->get();
         return view('pm::task/index', [
             'task_list' => $task_list,
         ]);

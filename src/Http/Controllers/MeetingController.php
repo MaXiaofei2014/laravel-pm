@@ -20,7 +20,9 @@ class MeetingController extends BaseController
     public function index()
     {
         $pmMeetingModel = new PmMeetingModel();
-        $meeting_list = $pmMeetingModel->all();
+        $meeting_list = $pmMeetingModel
+            ->orderBy('id', 'desc')
+            ->get();
         return view('pm::meeting/index', [
             'meeting_list' => $meeting_list,
         ]);
