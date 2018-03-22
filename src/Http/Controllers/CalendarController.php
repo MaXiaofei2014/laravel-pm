@@ -24,7 +24,7 @@ class CalendarController extends BaseController
         $pmCalendarModel = new PmCalendarModel();
         $time_type = $request->input('time_type', '今天');
         if ($time_type == '今天') {
-            $start_at_end = date('Y-m-d 00:00:00', time() + 24 * 3600);
+            $start_at_end = date('Y-m-d 23:59:59', time());
         }
         if ($time_type == '周') {
             $start_at_end = date('Y-m-d 00:00:00', time() + 7 * 24 * 3600);

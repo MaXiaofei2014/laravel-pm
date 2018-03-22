@@ -1,5 +1,5 @@
 <?php
-use Lifeibest\LaravelPm\Models\PmScheduleModel;
+use Lifeibest\LaravelPm\Models\PmCalendarModel;
 ?>
 @extends('pm::layouts.pm')
 @section('title')
@@ -43,7 +43,7 @@ Tasks
             </div>
 
 
-            <div class="weui-cell__ft">{{ date('m-d H:i',strtotime($calendar->start_at)) }}</div>
+            <div class="weui-cell__ft">{{ PmCalendarModel::timeShow(date('m-d H:i',strtotime($calendar->start_at))) }}</div>
           </a>
 @endforeach
           

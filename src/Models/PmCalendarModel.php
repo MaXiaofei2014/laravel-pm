@@ -43,16 +43,31 @@ class PmCalendarModel extends Model
         $title = '';
         switch ($this->calendar_type) {
             case '1':
-                $title = $this->pmTask->task_name;
+                $priority = $this->pmTask::$priority_list[$this->pmTask->priority];
+                $title = '【' . $priority . '】 ' . $this->pmTask->task_name;
                 break;
             case '2':
-                $title = $this->pmSchedule->schedule;
+                $schedule_type = $this->pmSchedule::$schedule_type_list[$this->pmSchedule->schedule_type];
+                $title = '【' . $schedule_type . '】 ' . $this->pmSchedule->schedule;
                 break;
 
             default:
                 break;
         }
         return $title;
+    }
+
+    /**
+     * 个性化显示时间
+     * @return [type] [description]
+     */
+    public static function timeShow($str)
+    {
+        $today_m_d = date('m-d', time());
+        $tomorrow_m_d = date('m-d', time() + 24 * 3600);
+        $str = str_replace($today_m_d, '今天', $str);
+        $str = str_replace($tomorrow_m_d, '明天', $str);
+        return $str;
     }
 
     /**
